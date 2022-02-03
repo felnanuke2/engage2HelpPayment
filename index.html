@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+  <base href="/">
+
+  <meta charset="UTF-8">
+  <meta content="IE=Edge" http-equiv="X-UA-Compatible">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0" />
+  <!-- Favicon -->
+  <link rel="SHORTCUT ICON" type="image/x-icon" href="https://www.engage2.help/favicon.ico" />
+  <title>Engage to Help</title>
+
+  <meta name="application-name" content="Engage to Help" />
+  <meta name="msapplication-TileColor" content="#eeeeee" />
+  <meta name="msapplication-tooltip" content="Engage to Help" />
+  <meta name="msvalidate.01" content="054F7361A5559D276C5748CFB4718FDB" />
+  <meta name="google-site-verification" content="QQRpOmkPML9kN2Lc5jiHOLppqFxCDy9uGAyI77wMNIA" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0" />
+  <meta name="application-name" content="Engage to Help" />
+  <meta name="description" content="E se o mundo fosse melhor e mais colorido para as crianças?">
+  <meta property="og:url" content="https://www.engage2.help" />
+  <meta property="og:site_name" content="Engage to Help" />
+  <meta property="og:image" content="https://engage2helpwebdev.z21.web.core.windows.net/assets/icons/icon.png" />
+  <meta property="og:title" content="Engage to Help" />
+  <meta property="og:description" content="E se o mundo fosse melhor e mais colorido para as crianças?" />
+  <meta property="og:locale" content="pt_BR" />
+
+  <!-- iOS meta tags & icons -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="apple-mobile-web-app-title" content="Engage to Help">
+  <link rel="apple-touch-icon" href="https://www.engage2.help/favicon.ico">
+
+  <style>
+    body {
+      touch-action: pan-y;
+    }
+  </style>
+
+
+  <!-- DEV -------------------------------- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PG10T9BE0D"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-PG10T9BE0D');
+  </script>
+
+  <style>
+    body {
+      touch-action: pan-y;
+    }
+  </style>
+
+  <link rel="manifest" href="manifest.json">
+
+
+  <!-- LIVE ---------------- Global site tag (gtag.js) - Google Analytics
+ <script async src="https://www.googletagmanager.com/gtag/js?id=G-HDT5G4L25T"></script>
+ <script>
+   window.dataLayer = window.dataLayer || [];
+   function gtag(){dataLayer.push(arguments);}
+   gtag('js', new Date());
+ 
+   gtag('config', 'G-HDT5G4L25T');
+ </script> -->
+
+
+</head>
+
+<body>
+
+
+  <img class="hand-blue" src="/images/mao_azul.svg" alt="Engage to Help">
+  <img class="hand-pink" src="/images/mao_rosa.svg" alt="">
+
+  <div class="top-appbar"></div>
+  <div class="bottom-appbar"></div>
+  <div class="logo"><img src="/icons/logo.svg" /></div>
+
+  <style>
+    :root {
+      --roxo: #6E5C92;
+      --verde: #15A56A;
+      --azul: #4973A6;
+      --rosa-claro: #F7AA6B;
+      --cinza: #898989;
+    }
+
+    body {
+      background-color: var(--azul);
+    }
+
+    .logo {
+      position: absolute;
+      top: 45%;
+      right: 50%;
+      bottom: 50%;
+      left: 45%;
+      z-index: -1;
+    }
+
+    .top-appbar {
+      height: 56px;
+      background-color: black;
+      position: fixed;
+      left: 0;
+      right: 0;
+      top: 0;
+      opacity: 0.2;
+      z-index: -1;
+    }
+
+    .bottom-appbar {
+      height: 56px;
+      background-color: black;
+      position: fixed;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      opacity: 0.3;
+      z-index: -1;
+    }
+
+    .hand-blue {
+      position: absolute;
+      left: 10%;
+      top: 10%;
+      z-index: -1;
+    }
+
+    .hand-pink {
+      position: absolute;
+      bottom: 7%;
+      right: 7%;
+      z-index: -1;
+    }
+  </style>
+
+
+  <div style="display: none;">
+    <!-- Add step #2 -->
+    <script src="https://sdk.mercadopago.com/js/v2"></script>
+
+
+
+    <!-- Step #2 -->
+    <form id="form-checkout">
+      <strong>Cartão</strong><br><br>
+      Número do Cartão<br>
+      <input type="text" name="cardNumber" id="form-checkout__cardNumber" value="4235647728025682" />
+      <br><br>
+
+      Bandeira<br>
+      <select name="issuer" id="form-checkout__issuer"></select>
+      <br><br>
+
+      Mês de validade<br>
+      <input type="text" name="cardExpirationMonth" id="form-checkout__cardExpirationMonth" value="11" />
+      <br><br>
+
+      Ano de validade<br>
+      <input type="text" name="cardExpirationYear" id="form-checkout__cardExpirationYear" value="25" />
+      <br><br>
+
+      Código de segurança<br>
+      <input type="text" name="securityCode" id="form-checkout__securityCode" value="123" />
+      <br><br>
+      <br><br>
+
+      <strong>Titular</strong><br><br>
+
+      Nome do titular<br>
+      <input type="text" name="cardholderName" id="form-checkout__cardholderName" value="teste" />
+      <br><br>
+
+      E-mail do titular<br>
+      <input type="email" name="cardholderEmail" id="form-checkout__cardholderEmail" value="test.payer@email.com" />
+      <br><br>
+
+
+      Tipo de Documento<br>
+      <select name="identificationType" id="form-checkout__identificationType"></select>
+      <br><br>
+
+      Número do Documento<br>
+      <input type="text" name="identificationNumber" id="form-checkout__identificationNumber" value="22442727889" />
+      <br><br>
+      <br><br>
+
+      <strong>Compra</strong><br><br>
+
+      Parcelas<br>
+
+      Valor<br>
+      <input type="text" name="amount" id="form-checkout_amount" value="100,50" />
+      <br><br>
+
+      <select name="installments" id="form-checkout__installments"></select>
+      <br><br>
+
+      <button type="submit" id="form-checkout__submit">Pagar</button>
+      <br><br>
+
+      <progress value="0" class="progress-bar">Carregando...</progress>
+      <br><br>
+    </form>
+
+    <br><br><br>
+    <input type="text" id="tkn" />
+    <code id="result"></code>
+
+
+    <script>
+      async function downloadTheme(filePath)
+      {
+        var response = await fetch(filePath);
+        var bytes = await response.arrayBuffer();
+        // var binaryString = window.atob(base64);
+        // var binaryLen = binaryString.length;
+        // var bytes = new Uint8Array(binaryLen);
+
+        // for (var i = 0; i < binaryLen; i++) {
+        //   var ascii = binaryString.charCodeAt(i);
+        //   bytes[i] = ascii;
+        // }
+
+        var blob = new Blob([bytes], { type: "octet/stream" });
+        var link = document.createElement('a');
+        link.href = window.URL.createObjectURL(blob);
+
+        var fileName = filePath.substr(filePath.lastIndexOf('/') + 1);
+        link.download = fileName;
+        link.click();
+      }
+
+      function downloadTheme2(filePath)
+      {
+        var link = document.createElement('a');
+        link.href = filePath;
+        link.target = "_blank"
+        link.download = filePath.substr(filePath.lastIndexOf('/') + 1);
+        link.click();
+        document.body.removeChild(link);
+      }
+
+    </script>
+
+    <script>
+      function generateMPToken()
+      {
+        console.log("token generation starting...");
+        try
+        {
+          cardForm.submit();
+
+          //onMpSubmited();
+          //document.getElementById("form-checkout__submit").click();
+          console.log("direct token generation started...");
+        } catch (e)
+        {
+          console.log(e);
+          // onMpSubmited();
+        }
+
+        console.log("token generation started...");
+
+        return tkn;
+      }
+
+      function getMPToken()
+      {
+        return tkn;
+      }
+
+      function getMPPaymentMethod()
+      {
+        return pmethod;
+      }
+
+      var tkn = "";
+      var pmethod = "";
+
+      const mp = new MercadoPago('TEST-4537864e-82ef-4ae9-ada3-491d8c5f614d');
+
+      var r = document.getElementById("result");
+      const progressBar = document.querySelector(".progress-bar");
+
+      function setMpData(
+        //transactionAmount,
+        cardNumber,
+        cardExpirationMonth,
+        cardExpirationYear,
+        securityCode,
+        cardHolderName,
+        identificationNumber,
+        cardholderEmail
+        )
+      {
+        setValue("form-checkout__cardNumber", cardNumber);
+        setValue("form-checkout__cardExpirationMonth", cardExpirationMonth);
+        setValue("form-checkout__cardExpirationYear", cardExpirationYear);
+        setValue("form-checkout__securityCode", securityCode);
+        setValue("form-checkout__cardholderName", cardHolderName);
+        setValue("form-checkout__cardholderEmail", cardholderEmail);
+        setValue("form-checkout__identificationNumber", identificationNumber);
+        setValue("form-checkout__identificationType", "CPF");
+        // setValue("form-checkout_amount", transactionAmount);
+      }
+
+      function setValue(elementId, elementValue)
+      {
+        document.getElementById(elementId).value = elementValue;
+        console.log(elementId + ": " + elementValue);
+      }
+
+
+      // Step #3
+      const cardForm = mp.cardForm({
+        amount: "10",
+        autoMount: true,
+        form: {
+          id: "form-checkout",
+          cardholderName: {
+            id: "form-checkout__cardholderName",
+            placeholder: "Titular do cartão",
+          },
+          cardholderEmail: {
+            id: "form-checkout__cardholderEmail",
+            placeholder: "E-mail",
+          },
+          cardNumber: {
+            id: "form-checkout__cardNumber",
+            placeholder: "Número do cartão",
+          },
+          cardExpirationMonth: {
+            id: "form-checkout__cardExpirationMonth",
+            placeholder: "Mês de vencimento",
+          },
+          cardExpirationYear: {
+            id: "form-checkout__cardExpirationYear",
+            placeholder: "Ano de vencimento",
+          },
+          securityCode: {
+            id: "form-checkout__securityCode",
+            placeholder: "Código de segurança",
+          },
+          installments: {
+            id: "form-checkout__installments",
+            placeholder: "Parcelas",
+          },
+          identificationType: {
+            id: "form-checkout__identificationType",
+            placeholder: "Tipo de documento",
+          },
+          identificationNumber: {
+            id: "form-checkout__identificationNumber",
+            placeholder: "Número do documento",
+          },
+          issuer: {
+            id: "form-checkout__issuer",
+            placeholder: "Banco emissor",
+          },
+        },
+        callbacks: {
+          onFormMounted: error =>
+          {
+            if (error) return console.warn("Form Mounted handling error: ", error);
+            console.log("Form mounted");
+          },
+          onSubmit: event =>
+          {
+            
+            event.preventDefault();
+
+            const progressBar = document.querySelector(".progress-bar");
+            progressBar.removeAttribute("value");
+
+            r.innerHTML = "";
+
+            var {
+              paymentMethodId: payment_method_id,
+              issuerId: issuer_id,
+              cardholderEmail: email,
+              amount,
+              token,
+              installments,
+              identificationNumber,
+              identificationType,
+            } = cardForm.getCardFormData();
+
+            tkn = token;
+
+            document.getElementById("tkn").value = token;
+
+            console.log(token);
+          
+
+            pmethod = payment_method_id;
+
+            console.log(pmethod);
+
+            // fetch("http://localhost:7071/process", {
+            /* fetch("https://engage2help-pay2-dev.azurewebsites.net/process", {
+                 method: "POST",
+                 headers: {
+                     "Content-Type": "application/json",
+                 },
+                 body: JSON.stringify({
+                     user_id: "1",
+                     token,
+                     transaction_amount: Number(amount),
+                     installments: Number(installments),
+                     payment_method_id,
+                     payer_email: email,
+                     //issuer_id,
+                     //description: "Descrição do produto",
+                     // payer: {
+                     //     email,
+                     //identification: {
+                     //    type: identificationType,
+                     //    number: identificationNumber,
+                     // },
+                     //},
+                 }),
+             }).then(async function (data)
+             {
+                 r.innerHTML = await data.text();
+                 progressBar.setAttribute("value", "0");
+             });*/
+          },
+          // onFetching: (resource) =>
+          // {
+          //     console.log("Fetching resource: ", resource);
+
+          //     // Animate progress bar
+          //     const progressBar = document.querySelector(".progress-bar");
+          //     progressBar.removeAttribute("value");
+
+          //     return () =>
+          //     {
+          //         progressBar.setAttribute("value", "0");
+          //     };
+          // },
+        },
+      });
+
+    </script>
+
+  </div>
+
+
+
+  <!-- This script installs service_worker.js to provide PWA functionality to
+       application. For more information, see:
+       https://developers.google.com/web/fundamentals/primers/service-workers -->
+  <script>
+    if ('serviceWorker' in navigator)
+    {
+      window.addEventListener('flutter-first-frame', function ()
+      {
+        navigator.serviceWorker.register('flutter_service_worker.js?v=3638237712');
+      });
+    }
+  </script>
+  <script src="main.dart.js" type="application/javascript"></script>
+</body>
+
+</html>
